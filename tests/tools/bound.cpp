@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
     cdb2_bind_param(db2, "ba", CDB2_BLOB, &ba, sizeof(ba));
     add_param(sp, sql, types, "ba", "hex(", ")");
 
-    int forblob[] = {htonl(0xdeadbeef), htonl(0xcafebabe), htonl(0xffffffff)};
+    unsigned int forblob[] = {htonl(0xdeadbeef), htonl(0xcafebabe), htonl(0xffffffff)};
     cdb2_bind_param(db1, "blob", CDB2_BLOB, forblob, sizeof(forblob));
     cdb2_bind_param(db2, "blob", CDB2_BLOB, forblob, sizeof(forblob));
     add_param(sp, sql, types, "blob", "hex(", ")");
