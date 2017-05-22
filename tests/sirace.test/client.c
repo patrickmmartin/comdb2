@@ -183,7 +183,7 @@ int main(int argc, char *argv[])
 
         while( (ret = cdb2_next_record(hndl)) == CDB2_OK) {
             void *xx = cdb2_column_value(hndl, 0);
-            printf("COUNT IS %ld.\n", *(int*) xx);
+            printf("COUNT IS %d.\n", *(int*) xx);
         } 
 
 
